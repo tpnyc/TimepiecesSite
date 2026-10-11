@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0c">
+<meta name="description" content="Discover considered timepieces at Timepieces NYC. Explore dress watches, divers, chronographs and everyday sports watches.">
+<title>Timepieces NYC | Curated Watches</title>
+<style>
+:root{--bg:#0b0b0c;--panel:#141416;--panel2:#1b1b1e;--text:#f5f2ec;--muted:#aaa7a1;--line:#343438;--accent:#d6bd8a;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.topline{border-bottom:1px solid var(--line);color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:10px 14px}
+header{border-bottom:1px solid var(--line);background:rgba(11,11,12,.96)}
+.header-inner{min-height:98px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:15px;min-width:0}
+.brand img{width:74px;height:74px;object-fit:contain;border-radius:2px}
+.brand-name{font-family:Georgia,'Times New Roman',serif;font-size:clamp(19px,2.4vw,29px);letter-spacing:.09em;line-height:1.15}
+.brand-tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+nav{display:flex;gap:26px;align-items:center;color:#e6e1d7;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+nav a:hover{color:var(--accent)}
+.contact-menu{position:relative}.contact-toggle{background:transparent;border:0;padding:8px 0;color:inherit;font:inherit;font-size:12px;letter-spacing:.1em;text-transform:uppercase}.contact-toggle:hover{color:var(--accent)}.contact-options{display:none;position:absolute;right:0;top:calc(100% + 12px);min-width:190px;background:#171719;border:1px solid var(--line);padding:7px;z-index:20;box-shadow:0 12px 28px #0008}.contact-options.open{display:block}.contact-options a{display:block;padding:11px 12px;white-space:nowrap;letter-spacing:.04em;font-size:11px}.contact-options a:hover{background:#262528;color:var(--accent)}.hero{padding:78px 0 68px;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 76% 18%,#292621 0%,#151414 27%,#0b0b0c 65%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:44px}
+.eyebrow{color:var(--accent);font-size:11px;letter-spacing:.25em;text-transform:uppercase}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(42px,6.1vw,76px);font-weight:400;line-height:1.04;letter-spacing:-.035em;margin:19px 0 22px;max-width:680px}
+.hero p{max-width:490px;color:#c2beb6;font-size:16px;line-height:1.8;margin:0 0 30px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--accent);color:#16130e;padding:14px 21px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--accent);transition:.2s}
+.cta:hover{background:transparent;color:var(--accent)}
+.hero-mark{min-height:280px;display:flex;align-items:center;justify-content:center;position:relative}
+.hero-mark img{width:min(100%,340px);max-height:340px;object-fit:contain;filter:drop-shadow(0 20px 35px #000)}
+.hero-mark:before{content:"";position:absolute;width:80%;aspect-ratio:1;border:1px solid #37332b;border-radius:50%}
+.hero-mark:after{content:"TPNYC";position:absolute;bottom:5px;color:#8f8062;letter-spacing:.45em;font-size:10px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:54px 0 25px}
+h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(29px,4vw,42px);font-weight:400;margin:8px 0 0}
+.section-note{color:var(--muted);font-size:13px}
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}
+.filter{background:transparent;border:1px solid var(--line);color:#c9c5bd;padding:10px 15px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.filter.active,.filter:hover{border-color:var(--accent);color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:72px}
+.card{background:var(--panel);border:1px solid #29292c;min-width:0;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.card:hover{border-color:#786b50;transform:translateY(-3px)}
+.product-image{height:300px;background:#101012;display:flex;align-items:center;justify-content:center;padding:12px;overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:contain;display:block}
+.product-info{padding:20px;display:flex;flex-direction:column;flex:1}
+.category{font-size:10px;color:var(--accent);letter-spacing:.2em;text-transform:uppercase}
+.product-info h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:20px;line-height:1.3;margin:9px 0 7px}
+.brandline{font-size:12px;color:var(--muted);margin:0 0 18px}
+.product-bottom{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.price{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#d6d0c6}
+.ask{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+.ask:hover{text-decoration:underline}
+.about{background:#121214;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:55px 0}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:start}
+.about p{color:#c2beb6;max-width:680px;line-height:1.9;margin:0}
+footer{padding:28px 0 34px;color:var(--muted);font-size:11px;letter-spacing:.08em}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer-brand{color:var(--text);letter-spacing:.16em;text-transform:uppercase}
+.empty{color:var(--muted);padding:30px 0}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr .7fr;gap:20px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.product-image{height:270px}.about-grid{grid-template-columns:1fr;gap:18px}nav{gap:14px}}
+@media(max-width:600px){.wrap{width:min(var(--max),calc(100% - 28px))}.topline{font-size:9px}.header-inner{min-height:80px;gap:10px}.brand{gap:10px}.brand img{width:54px;height:54px}.brand-tag{font-size:8px;letter-spacing:.12em}.brand-name{font-size:18px;letter-spacing:.045em}nav{gap:12px;font-size:10px}nav a:nth-child(2){display:none}.hero{padding:48px 0 42px}.hero-grid{grid-template-columns:1fr}.hero-mark{display:none}h1{font-size:46px;margin-top:14px}.hero p{font-size:14px}.section-head{margin-top:38px;align-items:start;flex-direction:column;gap:6px}.grid{gap:10px;margin-bottom:48px}.product-image{height:190px;padding:8px}.product-info{padding:13px}.product-info h3{font-size:16px}.brandline{font-size:11px;margin-bottom:12px}.product-bottom{align-items:flex-start;flex-direction:column;gap:7px}.ask{white-space:normal}.filter{padding:9px 11px}.footer-inner{align-items:flex-start;flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+<div class="topline">A considered collection of everyday icons and timeless design</div>
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="#home" aria-label="Timepieces NYC home">
+      <img src="assets/Logo.webp" alt="TPNYC logo">
+      <div><div class="brand-name">TIMEPIECES NYC</div><div class="brand-tag">Curated watches · New York</div></div>
+    </a>
+    <nav aria-label="Main navigation"><a href="#collection">Collection</a><a href="#about">Our approach</a><div class="contact-menu"><button class="contact-toggle" type="button" aria-expanded="false" aria-controls="contact-options">Contact <span aria-hidden="true">⌄</span></button><div class="contact-options" id="contact-options"><a id="header-sms" href="sms:+17087359846">Text message</a><a id="header-whatsapp" href="https://wa.me/17087359846" target="_blank" rel="noopener">WhatsApp message</a></div></div></nav>
+  </div>
+</header>
+<main id="home">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">The art of timekeeping</div>
+      <h1>Find the watch<br>that feels like you.</h1>
+      <p>From everyday sports watches to refined dress pieces, explore a considered selection of timepieces chosen for their character, craftsmanship and enduring style.</p>
+      <a class="cta" href="#collection">Explore the collection <span aria-hidden="true">↘</span></a>
+    </div>
+    <div class="hero-mark"><img src="assets/Logo.webp" alt=""></div>
+  </div>
+</section>
+<section class="wrap" id="collection">
+  <div class="section-head"><div><div class="eyebrow">Selected timepieces</div><h2>The Collection</h2></div><div class="section-note" id="count">10 timepieces</div></div>
+  <div class="filters" role="group" aria-label="Filter watches">
+    <button class="filter active" data-filter="All">All watches</button>
+    <button class="filter" data-filter="Dress">Dress</button>
+    <button class="filter" data-filter="Diver">Divers</button>
+    <button class="filter" data-filter="Sport">Sport</button>
+    <button class="filter" data-filter="Chronograph">Chronographs</button>
+  </div>
+  <div class="grid" id="product-grid"></div>
+</section>
+<section class="about" id="about"><div class="wrap about-grid"><div><div class="eyebrow">Timepieces NYC</div><h2>Good watches.<br>Personal taste.</h2></div><p>We believe the right watch is more than an accessory — it is a small expression of personal style. Browse the collection, then get in touch for current availability, condition details and pricing. Our selection evolves, so check back for new arrivals.</p></div></section>
+</main>
+<footer id="contact"><div class="wrap footer-inner"><div><div class="footer-brand">TIMEPIECES NYC</div><div>Curated watches for every wrist.</div></div><div class="footer-contact"><a href="sms:+17087359846">Text message</a><span> · </span><a href="https://wa.me/17087359846" target="_blank" rel="noopener">WhatsApp</a></div><div>© <span id="year"></span> Timepieces NYC</div></div></footer>
+<script>
+const products = [
+{ name: 'Omega Seamaster Professional', image: 'Omega seamaster professional.jpeg', category: 'Diver', brand: 'Omega' },
+{ name: 'Christopher Ward C12 38mm — Nordic Blue', image: 'CW 12 38mm nordic blue.jpeg', category: 'Sport', brand: 'Christopher Ward' },
+{ name: 'Omega Seamaster Aqua Terra', image: 'Omega Seamaster Aqua Terra.jpeg', category: 'Sport', brand: 'Omega' },
+{ name: 'Tudor Black Bay 54', image: 'Tudor BB54.jpeg', category: 'Diver', brand: 'Tudor' },
+{ name: 'Longines HydroConquest 39mm', image: 'Longines HydroConquest 39mm.webp', category: 'Diver', brand: 'Longines' },
+{ name: 'Cartier Tank Must — Small', image: 'Cartier tank must small.jpeg', category: 'Dress', brand: 'Cartier' },
+{ name: 'Tissot PRX Powermatic 80', image: 'Tissot ptx80 powermatic.webp', category: 'Sport', brand: 'Tissot' },
+{ name: 'Seiko SSB479 Chronograph', image: 'Seiko SSB479 Chronograph.jpeg', category: 'Chronograph', brand: 'Seiko' },
+{ name: 'Oris Divers Sixty-Five Date — Black', image: 'Oris 65 Diver Date Black.jpeg', category: 'Diver', brand: 'Oris' },
+{ name: 'Jaeger-LeCoultre Reverso Classique', image: 'JLC reverso classique.jpeg', category: 'Dress', brand: 'Jaeger-LeCoultre' }
+];
+const grid = document.getElementById('product-grid');
+const count = document.getElementById('count');
+const contactNumber = '17087359846';
+function render(filter='All') {
+  const shown = products.filter(p => filter === 'All' || p.category === filter);
+  count.textContent = `${shown.length} ${shown.length === 1 ? 'timepiece' : 'timepieces'}`;
+  grid.innerHTML = shown.map(p => `
+    <article class="card">
+      <div class="product-image"><img loading="lazy" src="assets/${p.image.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}" alt="${p.name.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}"></div>
+      <div class="product-info">
+        <div class="category">${p.category}</div>
+        <h3>${p.name}</h3>
+        <p class="brandline">${p.brand}</p>
+        <div class="product-bottom"><span class="price">Inquire for price</span><a class="ask" href="sms:+${contactNumber}?&body=${encodeURIComponent('Hi Timepieces NYC, I am interested in the ' + p.name + '. Is it available?')}" aria-label="Ask about ${p.name}">Ask about this watch ↗</a></div>
+      </div>
+    </article>`).join('');
+}
+document.querySelectorAll('.filter').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.filter').forEach(b => b.classList.toggle('active', b === btn));
+  render(btn.dataset.filter);
+}));
+const contactToggle = document.querySelector('.contact-toggle');\nconst contactOptions = document.getElementById('contact-options');\ncontactToggle.addEventListener('click', () => { const open = contactOptions.classList.toggle('open'); contactToggle.setAttribute('aria-expanded', String(open)); });\ndocument.addEventListener('click', event => { if (!event.target.closest('.contact-menu')) { contactOptions.classList.remove('open'); contactToggle.setAttribute('aria-expanded', 'false'); } });\ndocument.getElementById('year').textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
